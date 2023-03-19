@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "189608719311",
+    "firebase_url": "https://groupchat4-cb22c-default-rtdb.firebaseio.com",
+    "project_id": "groupchat4-cb22c",
+    "storage_bucket": "groupchat4-cb22c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189608719311:android:83dc7b4f411418b13498ba",
+        "android_client_info": {
+          "package_name": "com.mobile.groupchat4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189608719311-fhh1cj1mlipbo5m1nt3jc3qqjuj9fpja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP7hWY9vDn7JD-q-_U_yL3Al2otS1J7mg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189608719311-fhh1cj1mlipbo5m1nt3jc3qqjuj9fpja.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
