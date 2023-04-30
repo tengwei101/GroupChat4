@@ -151,7 +151,7 @@ public class ChatActivity extends AppCompatActivity {
                         String onlineStatus = ""+ds.child("onlineStatus").getValue();
 
                         if(onlineStatus.equals("online")){
-                            userStatusTv.setText(onlineStatus);
+                            userStatusTv.setText("In Chat");
                         }
                         else{
                             //convert timestamp to proper timedate
@@ -162,12 +162,8 @@ public class ChatActivity extends AppCompatActivity {
 
                         }
                     }
-
-
                     //set Data
                     nameTv.setText(name);
-
-
                     try{
 
                         Picasso.get().load(hisImage).placeholder(R.drawable.ic_default_img_white).into(profileIv);
@@ -291,11 +287,11 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void pickFromGallery() {
-        //pick from allery
-        Intent galleryIntent = new Intent(Intent.ACTION_PICK);
+        // Use the Storage Access Framework to pick an image from the gallery
+        Intent galleryIntent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        galleryIntent.addCategory(Intent.CATEGORY_OPENABLE);
         galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent, IMAGE_PICK_GALLERY_CODE);
-
     }
 
     private boolean checkStoragePermission(){
@@ -665,6 +661,9 @@ public class ChatActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         menu.findItem(R.id.action_search).setVisible(false);
         menu.findItem(R.id.action_create_group).setVisible(false);
+        menu.findItem(R.id.action_add_participant).setVisible(false);
+        menu.findItem(R.id.action_profile).setVisible(false);
+        menu.findItem(R.id.action_groupinfo).setVisible(false);
 
 
         return super.onCreateOptionsMenu(menu);

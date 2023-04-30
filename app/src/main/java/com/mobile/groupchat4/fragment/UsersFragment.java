@@ -6,8 +6,11 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,8 +44,8 @@ public class UsersFragment extends Fragment {
     RecyclerView recyclerView;
     AdapterUsers adapterUsers;
     List<ModelUser> userList;
-
     FirebaseAuth firebaseAuth;
+    ActionBar actionBar;
 
     public UsersFragment() {
         // Required empty public constructor
@@ -53,6 +56,9 @@ public class UsersFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_users, container, false);
+
+        actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -180,6 +186,12 @@ public class UsersFragment extends Fragment {
 
         //SearchView
         MenuItem item = menu.findItem(R.id.action_search);
+        menu.findItem(R.id.action_create_group).setVisible(false);
+        menu.findItem(R.id.action_add_participant).setVisible(false);
+        menu.findItem(R.id.action_groupinfo).setVisible(false);
+
+
+
 
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
 
@@ -228,6 +240,15 @@ public class UsersFragment extends Fragment {
         }
         else if (id == R.id.action_create_group){
             startActivity(new Intent(getActivity(), GroupCreateActivity.class));
+        }
+        else if(id == R.id.action_profile){
+            // home fragment transaction
+            actionBar.setTitle("Profile");
+            ProfileFragment fragment2 = new ProfileFragment();
+            FragmentTransaction ft2 = getParentFragmentManager().beginTransaction();
+            ft2.replace(R.id.content, fragment2, "");
+            ft2.commit();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

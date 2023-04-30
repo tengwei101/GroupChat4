@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<!--    <item android:id="@+id/nav_home"-->
-<!--        android:title="Home"-->
-<!--        android:icon="@drawable/ic_home_black"/>-->
+    <item android:id="@+id/nav_marketplace"
+        android:title="Marketplace"
+        android:icon="@drawable/ic_marketplace_black"/>
 
-    <item android:id="@+id/nav_profile"
-        android:title="Profile"
-        android:icon="@drawable/ic_profile_black"/>
+    <item android:id="@+id/nav_charity"
+        android:title="Charities"
+        android:icon="@drawable/ic_charity_black"/>
 
     <item android:id="@+id/nav_users"
         android:title="Users"
@@ -17,7 +17,7 @@
         android:icon="@drawable/ic_chat_black"/>
 
     <item android:id="@+id/nav_groupChat"
-        android:title="Chats"
+        android:title="Group"
         android:icon="@drawable/ic_groupchat_black"/>
 
 </menu>

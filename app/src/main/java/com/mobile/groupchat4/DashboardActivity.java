@@ -13,9 +13,10 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.mobile.groupchat4.fragment.CharitiesFragment;
 import com.mobile.groupchat4.fragment.ChatListFragment;
 import com.mobile.groupchat4.fragment.GroupChatsFragment;
-import com.mobile.groupchat4.fragment.HomeFragment;
+import com.mobile.groupchat4.fragment.MarketplaceFragment;
 import com.mobile.groupchat4.fragment.ProfileFragment;
 import com.mobile.groupchat4.fragment.UsersFragment;
 
@@ -38,13 +39,11 @@ public class DashboardActivity extends AppCompatActivity {
         navigationView.setOnNavigationItemSelectedListener(selectedListener);
 
         // default
-        actionBar.setTitle("Home");
-        ProfileFragment fragment1 = new ProfileFragment();
+        actionBar.setTitle("Marketplace");
+        MarketplaceFragment fragment1 = new MarketplaceFragment();
         FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
         ft1.replace(R.id.content, fragment1, "");
         ft1.commit();
-
-
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener selectedListener =
@@ -52,18 +51,18 @@ public class DashboardActivity extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()){
-//                        case R.id.nav_home:
-//                            // home fragment transaction
-//                            actionBar.setTitle("Home");
-//                            HomeFragment fragment1 = new HomeFragment();
-//                            FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
-//                            ft1.replace(R.id.content, fragment1, "");
-//                            ft1.commit();
-//                            return true;
-                        case R.id.nav_profile:
+                        case R.id.nav_marketplace:
                             // home fragment transaction
-                            actionBar.setTitle("Profile");
-                            ProfileFragment fragment2 = new ProfileFragment();
+                            actionBar.setTitle("Marketplace");
+                            MarketplaceFragment fragment1 = new MarketplaceFragment();
+                            FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
+                            ft1.replace(R.id.content, fragment1, "");
+                            ft1.commit();
+                            return true;
+                        case R.id.nav_charity:
+                            // home fragment transaction
+                            actionBar.setTitle("Charities");
+                            CharitiesFragment fragment2 = new CharitiesFragment();
                             FragmentTransaction ft2 = getSupportFragmentManager().beginTransaction();
                             ft2.replace(R.id.content, fragment2, "");
                             ft2.commit();

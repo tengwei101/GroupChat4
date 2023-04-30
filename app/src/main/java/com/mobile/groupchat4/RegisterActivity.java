@@ -43,6 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
         // Actionbar and its title
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Create Account");
+        actionBar.hide();
 
         //enable back button
         actionBar.setDisplayHomeAsUpEnabled(true);

@@ -12,8 +12,10 @@
         android:layout_height="wrap_content"
         android:text="Register"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="25sp" />
+        android:textColor="@color/teal_700"
+        android:textStyle="bold"
+        android:layout_marginTop="70dp"
+        android:textSize="45sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -56,14 +58,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/have_accountTv"
+<!--    <TextView-->
+<!--        android:id="@+id/have_accountTv"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Already have account? Login"-->
+<!--        android:textAlignment="center"-->
+<!--        android:layout_below="@+id/registerBtn"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:textColor="@color/black"/>-->
+
+    <LinearLayout
+        android:id="@+id/registerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Already have account? Login"
-        android:textAlignment="center"
-        android:layout_below="@+id/registerBtn"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="30dp"
-        android:textColor="@color/black"/>
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have account?  "
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/have_accountTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@color/purple_500" />
+    </LinearLayout>
 
 </RelativeLayout>

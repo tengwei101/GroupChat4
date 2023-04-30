@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/productItemLayout"
+    android:layout_width="170dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="15dp"
+    android:background="#FFFFFF"
+    android:elevation="10dp"
+    android:layout_marginTop="40dp"
+    android:outlineProvider="bounds"
+    android:clipToOutline="true">
+
+    <ImageView
+        android:id="@+id/productImageIv"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_marketplace_black"/>
+
+    <TextView
+        android:id="@+id/productTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/productImageIv"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:text="H&amp;M Stranger Thing Jacket"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/sizeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIZE M"
+        android:layout_below="@+id/productTitleTv"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/conditionTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONDITION"
+        android:layout_below="@+id/sizeTv"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/priceTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/conditionTv"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="RM19.90"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <ImageButton
+        android:id="@+id/favorite_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/conditionTv"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_vertical"
+        android:background="@null"
+        android:scaleType="center"
+        android:src="@drawable/ic_favourite_black" />
+
+</RelativeLayout>

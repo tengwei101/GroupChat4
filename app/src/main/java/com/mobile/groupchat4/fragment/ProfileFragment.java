@@ -15,9 +15,12 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.provider.MediaStore;
 import android.text.TextUtils;
@@ -60,6 +63,7 @@ import java.util.HashMap;
 
 public class ProfileFragment extends Fragment {
 
+    ActionBar actionBar;
 
     //firebase
     FirebaseAuth firebaseAuth;
@@ -105,6 +109,10 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        actionBar.setTitle("Profile");
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
@@ -228,7 +236,6 @@ public class ProfileFragment extends Fragment {
                     //Edit Name Clicked
                     progressDialog.setMessage("Updating Name");
                     showNamePhoneUpdateDialog("name");
-
                 }
                 else if (which == 3){
                     //Edit Phone Clicked
@@ -553,8 +560,9 @@ public class ProfileFragment extends Fragment {
     }
 
     private void pickFromGallery() {
-        //pick from allery
-        Intent galleryIntent = new Intent(Intent.ACTION_PICK);
+        // Use the Storage Access Framework to pick an image from the gallery
+        Intent galleryIntent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        galleryIntent.addCategory(Intent.CATEGORY_OPENABLE);
         galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent, IMAGE_PICK_GALLERY_CODE);
 
@@ -598,6 +606,11 @@ public class ProfileFragment extends Fragment {
         inflater.inflate(R.menu.menu_main, menu);
 
         menu.findItem(R.id.action_create_group).setVisible(false);
+        menu.findItem(R.id.action_search).setVisible(false);
+        menu.findItem(R.id.action_add_participant).setVisible(false);
+        menu.findItem(R.id.action_groupinfo).setVisible(false);
+
+
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -607,6 +620,15 @@ public class ProfileFragment extends Fragment {
         if (id == R.id.action_logout){
             firebaseAuth.signOut();
             checkUserStatus();
+        }
+        else if(id == R.id.action_profile){
+            // home fragment transaction
+            actionBar.setTitle("Profile");
+            ProfileFragment fragment2 = new ProfileFragment();
+            FragmentTransaction ft2 = getParentFragmentManager().beginTransaction();
+            ft2.replace(R.id.content, fragment2, "");
+            ft2.commit();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -34,6 +34,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.mobile.groupchat4.fragment.GroupChatsFragment;
 
 import java.net.URI;
 import java.util.HashMap;
@@ -94,8 +95,6 @@ public class GroupCreateActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showImagePickDialog();
-
-
             }
         });
 
@@ -191,6 +190,8 @@ public class GroupCreateActivity extends AppCompatActivity {
                                         //participants added
                                         progressDialog.dismiss();
                                         Toast.makeText(GroupCreateActivity.this, "Group created...", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(GroupCreateActivity.this, DashboardActivity.class));
+                                        finish();
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
@@ -213,8 +214,6 @@ public class GroupCreateActivity extends AppCompatActivity {
                         
                     }
                 });
-
-
     }
 
     private void showImagePickDialog() {

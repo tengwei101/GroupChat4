@@ -5,15 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:padding="20dp">
+    android:padding="30dp">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/appTitleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to SeCloth"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        android:typeface="serif"
+        android:textColor="@color/teal_700"/>
 
 
     <ImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/donationhome"
+        android:id="@+id/donationIv"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/appTitleTv"
+        android:src="@drawable/donationhome" />
 
     <!--    Button: Register-->
     <Button

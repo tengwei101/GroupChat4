@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomSearchView" parent="Widget.AppCompat.SearchView">
+<!--        <item name="searchIcon">@drawable/ic_search</item>-->
+        <item name="queryBackground">@drawable/search_view_background</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+
+</resources>

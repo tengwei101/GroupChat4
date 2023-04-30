@@ -2,4 +2,40 @@
     <string name="app_name">GroupChat4</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="spinner_items">
+        <item>Shirts</item>
+        <item>Dresses</item>
+        <item>Shoes</item>
+        <item>Jeans</item>
+        <item>Shorts</item>
+        <item>Pants</item>
+
+        <!-- Add more items as needed -->
+    </string-array>
+
+    <string-array name="all_spinner_items">
+        <item>All</item>
+        <item>Shirts</item>
+        <item>Dresses</item>
+        <item>Shoes</item>
+        <item>Jeans</item>
+        <item>Shorts</item>
+        <item>Pants</item>
+
+        <!-- Add more items as needed -->
+    </string-array>
+
+
+    <string-array name="condition_spinner_items">
+        <item>New with tags (NWT)</item>
+        <item>Like new</item>
+        <item>Excellent</item>
+        <item>Good</item>
+        <item>Fair</item>
+        <item>Poor</item>
+
+
+        <!-- Add more items as needed -->
+    </string-array>
 </resources>
